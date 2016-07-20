@@ -19,7 +19,7 @@ RSpec.describe WordDB do
 
   end
 
-  describe '::anagram_for' do
+  describe '#anagram_for' do
     before do
       subject.index!
     end

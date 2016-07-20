@@ -1,6 +1,6 @@
 class AnagramsController < ApplicationController
 
   def index
-    render json: { beta: ['beat', 'abet'] }
+    render json: Anagram.for(params[:words])
   end
 end

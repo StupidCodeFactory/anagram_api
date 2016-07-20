@@ -1,9 +1,9 @@
 class WordDB
 
-  DEFAULT_DF_FILE = '/usr/share/dict/words'.freeze
+  DEFAULT_DB_FILE = '/usr/share/dict/words'.freeze
 
-  def initialize(word_db_file_path = DEFAULT_DF_FILE)
-    self.word_db_file_path = word_db_file_path
+  def initialize(word_db_file_path)
+    self.word_db_file_path = word_db_file_path || DEFAULT_DB_FILE
     self.index             = Hash.new { |hash, key| hash[key] = [] }
   end
 
@@ -20,7 +20,8 @@ class WordDB
   end
 
   def anagrams_for(word)
-    index[index_key_for(word.downcase)]
+    word.downcase!
+    index[index_key_for(word.downcase)] - [word]
   end
 
 

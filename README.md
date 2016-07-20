@@ -1,24 +1,8 @@
-# README
+[![Build Status](https://travis-ci.org/StupidCodeFactory/anagram_api.svg?branch=master)](https://travis-ci.org/StupidCodeFactory/anagram_api)
+This app is hosted on [heroku](https://yannagram.herokuapp.com/tea,coffee,beer)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+run the test suite
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+./bin/rake
+```

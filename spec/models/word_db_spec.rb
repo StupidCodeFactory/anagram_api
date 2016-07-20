@@ -14,7 +14,7 @@ RSpec.describe WordDB do
 
     it 'index does not include twice the same word' do
       subject.index!
-      expect(subject.anagrams_for('beta')).to eq(["abet", "beat", "beta"])
+      expect(subject.anagrams_for('beta')).to eq(["abet", "beat"])
     end
 
   end
@@ -24,12 +24,12 @@ RSpec.describe WordDB do
       subject.index!
     end
 
-    it 'has indexed words correctly' do
-      expect(subject.anagrams_for('beta')).to eq(["abet", "beat", "beta"])
+    it 'has indexed words correctly and does not return the key word' do
+      expect(subject.anagrams_for('beta')).to eq(["abet", "beat"])
     end
 
     it 'search is case insensitive' do
-      expect(subject.anagrams_for('BETA')).to eq(["abet", "beat", "beta"])
+      expect(subject.anagrams_for('BETA')).to eq(["abet", "beat"])
     end
 
   end
